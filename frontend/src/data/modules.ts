@@ -102,6 +102,17 @@ export const MODULES: ModuleMeta[] = [
     metrics: ["批次总数", "已落库批次", "待校验批次"],
   },
   {
+    key: "collection_stats",
+    name: "采集统计",
+    entity: "采集统计",
+    desc: "版本化采集统计：v2 整数口径迁移、按日对账与待核查占位文本回查",
+    fields: ["批次标识", "采集时间", "统计版本", "原始行数", "有效行数", "迁移状态", "待核查原因", "迁移批次", "来源原文"],
+    statuses: ["待核查", "已迁移"],
+    actions: ["重新迁移"],
+    actionTargets: {"重新迁移": "待核查"},
+    metrics: ["统计批次总数", "已迁移批次", "待核查批次"],
+  },
+  {
     key: "dedup_engine",
     name: "去重引擎",
     entity: "去重策略",

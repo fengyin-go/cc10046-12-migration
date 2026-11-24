@@ -3,5 +3,7 @@ from __future__ import annotations
 
 from app.routers import resource
 from app.routers import chains
+from app.routers import stats
 
-ROUTERS = [resource, chains]
+# stats 含固定前缀 /api/collection-stats，需放在通用 /api/{module} 之前注册
+ROUTERS = [stats, resource, chains]

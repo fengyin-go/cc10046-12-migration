@@ -15,6 +15,8 @@
       </div>
     </header>
 
+    <ReconcilePanel v-if="meta.key === 'collection_stats'" />
+
     <div class="stat-row">
       <article v-for="item in stats" :key="item.label" class="stat-card">
         <span class="stat-label">{{ item.label }}</span>
@@ -103,6 +105,7 @@ import {
   moduleMeta,
   runAction as applyAction,
 } from '@/api/backend-service'
+import ReconcilePanel from './ReconcilePanel.vue'
 import type { EntryRow } from '@/data/types'
 
 const props = defineProps<{ moduleKey: string }>()

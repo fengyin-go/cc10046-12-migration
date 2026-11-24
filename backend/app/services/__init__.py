@@ -11,6 +11,7 @@ from app.services.extraction_template import ExtractionTemplateService
 from app.services.data_validator import DataValidatorService
 from app.services.crawl_schedule import CrawlScheduleService
 from app.services.result_store import ResultStoreService
+from app.services.collection_stats import CollectionStatsService
 from app.services.dedup_engine import DedupEngineService
 from app.services.field_mapper import FieldMapperService
 from app.services.error_retry import ErrorRetryService
@@ -34,6 +35,7 @@ SERVICES: dict[str, BaseModuleService] = {
     "data_validator": DataValidatorService(),
     "crawl_schedule": CrawlScheduleService(),
     "result_store": ResultStoreService(),
+    "collection_stats": CollectionStatsService(),
     "dedup_engine": DedupEngineService(),
     "field_mapper": FieldMapperService(),
     "error_retry": ErrorRetryService(),
